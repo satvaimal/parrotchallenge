@@ -1,0 +1,37 @@
+ databaseChangeLog:
+   - changeSet:
+      id: products
+      author: alejandro_garcia
+      changes:
+        - createTable:
+           tableName: products
+           columns:
+             - column:
+                 name: id
+                 type: int
+                 autoIncrement: true
+                 constraints:
+                   primaryKey: true
+                   nullable: false
+             - column:
+                 name: user_id
+                 type: int
+                 constraints:
+                   nullable: false
+             - column:
+                 name: name
+                 type: varchar(50) 
+                 constraints:
+                   nullable: false
+             - column:
+                 name: price
+                 type: decimal
+                 constraints:
+                   nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames:  user_id
+            baseTableName:  products
+            constraintName:  fk_products_users
+            referencedColumnNames:  id
+            referencedTableName:  users
+

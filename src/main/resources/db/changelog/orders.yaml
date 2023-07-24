@@ -1,0 +1,41 @@
+ databaseChangeLog:
+   - changeSet:
+      id: orders
+      author: alejandro_garcia
+      changes:
+        - createTable:
+           tableName: orders
+           columns:
+             - column:
+                 name: id
+                 type: int
+                 autoIncrement: true
+                 constraints:
+                   primaryKey: true
+                   nullable: false
+             - column:
+                 name: user_id
+                 type: int
+                 constraints:
+                   nullable: false
+             - column:
+                 name: client_name
+                 type: varchar(50) 
+                 constraints:
+                   nullable: false
+             - column:
+                 name: creation_date
+                 type: date
+                 constraints:
+                   nullable: false
+             - column:
+                 name: total
+                 type: decimal
+                 constraints:
+                   nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames:  user_id
+            baseTableName:  orders
+            constraintName:  fk_orders_users
+            referencedColumnNames:  id
+            referencedTableName:  users

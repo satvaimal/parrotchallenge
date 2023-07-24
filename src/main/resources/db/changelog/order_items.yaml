@@ -1,0 +1,42 @@
+ databaseChangeLog:
+   - changeSet:
+      id: order_items
+      author: alejandro_garcia
+      changes:
+        - createTable:
+           tableName: order_items
+           columns:
+             - column:
+                 name: id
+                 type: int
+                 autoIncrement: true
+                 constraints:
+                   primaryKey: true
+                   nullable: false
+             - column:
+                 name: order_id
+                 type: int
+                 constraints:
+                   nullable: false
+             - column:
+                 name: product_id
+                 type: int
+                 constraints:
+                   nullable: false
+             - column:
+                 name: quantity
+                 type: int
+                 constraints:
+                   nullable: false
+        - addForeignKeyConstraint:
+            baseColumnNames:  order_id
+            baseTableName:  order_items
+            constraintName:  fk_orderitems_orders
+            referencedColumnNames:  id
+            referencedTableName:  orders
+        - addForeignKeyConstraint:
+            baseColumnNames:  product_id
+            baseTableName:  order_items
+            constraintName:  fk_orderitems_products
+            referencedColumnNames:  id
+            referencedTableName:  products

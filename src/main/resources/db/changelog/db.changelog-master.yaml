@@ -1,0 +1,9 @@
+ databaseChangeLog:
+   - include:
+      file: db/changelog/users.yaml
+   - include:
+      file: db/changelog/orders.yaml
+   - include:
+      file: db/changelog/products.yaml
+   - include:
+      file: db/changelog/order_items.yaml
