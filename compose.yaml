@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:15.3'
+    environment:
+      - 'POSTGRES_DB=parrot_challenge'
+      - 'POSTGRES_USER=username'
+      - 'POSTGRES_PASSWORD=password'
+    ports:
+      - '5432'
