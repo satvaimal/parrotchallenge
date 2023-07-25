@@ -10,6 +10,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ProductRepository extends CrudRepository<Product, Long>{
 
+  Product findFirstByName(String name);
+
   @Query(nativeQuery = true)
   List<ProductReportItem> getProductsReport(Date from, Date to);
 

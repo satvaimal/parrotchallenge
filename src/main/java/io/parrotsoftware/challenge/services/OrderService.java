@@ -81,8 +81,11 @@ public class OrderService {
     Order order = orderRepository.save(new Order(
         user, orderDto.getClientName(), creationDate, orderDto.getTotal()));
     for (ProductDto productDto : orderDto.getProducts()) {
-      Product product = productRepository.save(new Product(
-          user, productDto.getName(), productDto.getPrice()));
+      Product product = productRepository.findFirstByName(productDto.getName());
+      if (product == null) {
+        product = productRepository.save(new Product(
+            user, productDto.getName(), productDto.getPrice()));
+      }
       orderItemRepository.save(new OrderItem(
           order, product, productDto.getQuantity()));
     }

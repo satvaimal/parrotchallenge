@@ -24,6 +24,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 import org.mockito.InjectMocks;
@@ -55,6 +56,8 @@ public class OrderServiceProcessOrderTest {
         .thenReturn(Optional.of(new User()));
     when(orderRepository.save(any(Order.class)))
         .thenReturn(new Order());
+    when(productRepository.findFirstByName(anyString()))
+        .thenReturn(null);
     when(productRepository.save(any(Product.class)))
         .thenReturn(new Product());
     when(orderItemRepository.save(any(OrderItem.class)))
@@ -81,6 +84,8 @@ public class OrderServiceProcessOrderTest {
         .thenReturn(Optional.of(new User()));
     when(orderRepository.save(any(Order.class)))
         .thenReturn(new Order());
+    when(productRepository.findFirstByName(anyString()))
+        .thenReturn(null);
     when(productRepository.save(any(Product.class)))
         .thenReturn(new Product());
     when(orderItemRepository.save(any(OrderItem.class)))
