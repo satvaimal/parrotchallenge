@@ -6,7 +6,7 @@ The application has the following endpoints available:
 - `POST /orders`
 - `GET /products_report`
 
-[Here](https://api.postman.com/collections/1746446-b3311ef3-8e4a-4282-a8ea-f42ed23162e2) you will find a Postman Collection with examples about API usage. Be sure to ask for your Postman API KEY in order to get access to the collection.
+[Here](https://api.postman.com/collections/1746446-b3311ef3-8e4a-4282-a8ea-f42ed23162e2?access_key=) you will find a Postman Collection with examples about API usage. Be sure to ask for your Postman API KEY in order to get access to the collection.
 
 ## Software used
 The following software is required in order to run the application:
