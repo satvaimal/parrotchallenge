@@ -1,9 +1,5 @@
 package io.parrotsoftware.challenge.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,7 +10,6 @@ import io.parrotsoftware.challenge.utils.Mocks;
 import static org.hamcrest.CoreMatchers.is;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
@@ -33,9 +28,6 @@ public class ReportControllerGetProductsReportTest {
 
   @Autowired
   private MockMvc mockMvc;
-
-  @Autowired
-  private ObjectMapper objectMapper;
 
   @MockBean
   private ProductRepository productRepository;
@@ -59,7 +51,6 @@ public class ReportControllerGetProductsReportTest {
   @Test
   public void queryParameterIsMissing() throws Exception {
 
-    List<ProductReportItem> items = Mocks.mockProductReportItems();
     this.mockMvc.perform(get(
         "/products_report?from=2023-07-01")
         .contentType(MediaType.APPLICATION_JSON))
@@ -72,7 +63,6 @@ public class ReportControllerGetProductsReportTest {
   @Test
   public void queryParameterIsWrong() throws Exception {
 
-    List<ProductReportItem> items = Mocks.mockProductReportItems();
     this.mockMvc.perform(get(
         "/products_report?from=2023-07-01&to=2023-07-")
         .contentType(MediaType.APPLICATION_JSON))
@@ -85,7 +75,6 @@ public class ReportControllerGetProductsReportTest {
   @Test
   public void dateRangeIsWrong() throws Exception {
 
-    List<ProductReportItem> items = Mocks.mockProductReportItems();
     this.mockMvc.perform(get(
         "/products_report?from=2023-07-31&to=2023-07-01")
         .contentType(MediaType.APPLICATION_JSON))

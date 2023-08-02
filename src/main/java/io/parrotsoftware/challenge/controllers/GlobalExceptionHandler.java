@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import io.parrotsoftware.challenge.errors.MyError;
 import io.parrotsoftware.challenge.errors.MyValidationException;

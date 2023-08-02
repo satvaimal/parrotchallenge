@@ -2,10 +2,6 @@ package io.parrotsoftware.challenge.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-
 import io.parrotsoftware.challenge.dtos.ProductDto;
 import io.parrotsoftware.challenge.dtos.OrderDto;
 import io.parrotsoftware.challenge.services.OrderService;
@@ -14,7 +10,6 @@ import io.parrotsoftware.challenge.utils.Mocks;
 import static org.hamcrest.CoreMatchers.is;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
